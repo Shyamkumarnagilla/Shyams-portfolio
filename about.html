@@ -437,9 +437,12 @@
         </article>
 
         <article class="portfolio-card">
-          <a href="https://shyamkumarnagilla.github.io/Cloudcast/" class="portfolio-img-wrapper">
+          <div class="portfolio-img-wrapper cloudcast-img-wrapper" style="position: relative;">
             <img src="assets/img/project-4.png" alt="" class="portfolio-img">
-          </a>
+            <div class="portfolio-popup-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(79,70,229,0.5); background: color-mix(in srgb, var(--first-color, #4f46e5) 50%, transparent); color: var(--text-color, #fff); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; pointer-events: none;">
+              <a href="https://shyamkumarnagilla.github.io/Cloudcast/" target="_blank" style="background: #fff; color: var(--first-color, #4f46e5); padding: 10px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-size: 1.1rem; border: 2px solid var(--first-color, #4f46e5);">View Project</a>
+            </div>
+          </div>
 
           <h3 class="portfolio-title">Cloudcast-Weather App</h3>
           <p class="portfolio-description">Developed a responsive web app for real-time weather tracking using
@@ -459,7 +462,7 @@
         </article>
 
         <article class="portfolio-card">
-          <a href="#" class="portfolio-img-wrapper">
+          <a href="" class="portfolio-img-wrapper">
             <img src="assets/img/project-5.png" alt="" class="portfolio-img">
           </a>
 
@@ -531,6 +534,23 @@
   </div>
   <!--=============== MAIN JS ===============-->
   <script src="assets/js/main.js"></script>
+<script>
+  // Show popup overlay on hover for Cloudcast Weather App
+  document.addEventListener('DOMContentLoaded', function() {
+    var cloudcastCard = document.querySelector('.cloudcast-img-wrapper');
+    var popup = cloudcastCard && cloudcastCard.querySelector('.portfolio-popup-overlay');
+    if (cloudcastCard && popup) {
+      cloudcastCard.addEventListener('mouseenter', function() {
+        popup.style.opacity = '1';
+        popup.style.pointerEvents = 'auto';
+      });
+      cloudcastCard.addEventListener('mouseleave', function() {
+        popup.style.opacity = '0';
+        popup.style.pointerEvents = 'none';
+      });
+    }
+  });
+</script>
 </body>
 
 </html>

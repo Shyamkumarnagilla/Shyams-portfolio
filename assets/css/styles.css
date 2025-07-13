@@ -1,3 +1,16 @@
+@media (min-width: 601px) {
+  .home-content .button {
+    margin-right: 16px;
+  }
+  .home-content .button:last-of-type {
+    margin-right: 0;
+  }
+}
+@media (min-width: 601px) {
+  .home-content {
+    margin-bottom: 40px;
+  }
+}
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700;800&display=swap');
 
@@ -1089,4 +1102,26 @@ footer {
   .resume-item {
     padding-left: 2.5rem;
   }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--main-color, #4f46e5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s, transform 0.08s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  mix-blend-mode: multiply;
+}
+
+body:active .custom-cursor {
+  background: var(--accent-color, #f59e42);
+  transform: scale(0.8) translate(-50%, -50%);
 }
